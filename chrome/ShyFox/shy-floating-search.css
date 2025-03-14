@@ -42,8 +42,8 @@ Cool floating search panel
       width: 100vw;
       height: 100vh;
 
-      top: 0px;
-      left: 0px;
+      top: -20vh;
+      left: -18vw;
 
       background-color: color-mix(in srgb, var(--bg-col) 80%, transparent);
     }
