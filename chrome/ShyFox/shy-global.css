@@ -30,8 +30,10 @@ Area where website is displayed
 }
 
 /* some z-index */
-#navigator-toolbox {z-index: 2 !important;}
-#browser {z-index: 1 !important;}
+:root:not([windowtype="Toolkit:PictureInPicture"]) {
+  #navigator-toolbox {z-index: 2 !important;}
+  #browser {z-index: 1 !important;}
+}
 
 /* if it not fullscreen video or floating window */
 #main-window:not([inDOMFullscreen="true"])[chromehidden=""]{
