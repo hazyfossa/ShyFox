@@ -303,23 +303,9 @@ Apply theme colors to context menus and menubar
 
 */
 
-/* in page context menu */
+/* toolbar and context menu */
 #contentAreaContextMenu[showservicesmenu="true"],
-#contentAreaContextMenu[showservicesmenu="true"] menupopup
-{
-  --panel-background: var(--bg-col)!important;
-  --panel-border-color: var(--tb-col) !important;
-  
-  --toolbar-field-focus-background-color: var(--bt-col) !important;
-  --panel-color: var(--bt-col) !important;  
-  
-  menu:where([_moz-menuactive="true"]:not([disabled="true"])), menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
-    background-color: var(--panel-item-hover-bgcolor) !important;
-    color: var(--bt-col) !important;
-  }
-}
-
-/* toolbar menu */
+#contentAreaContextMenu[showservicesmenu="true"] menupopup,
 #toolbar-menubar menupopup,
 #toolbar-context-menu, #toolbar-context-menu menupopup,
 #unified-extensions-context-menu, #unified-extensions-context-menu menupopup,
@@ -336,14 +322,25 @@ Apply theme colors to context menus and menubar
   --panel-color: var(--bt-col) !important;  
   
   menu:where([_moz-menuactive="true"]:not([disabled="true"])), menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
-    background-color: var(--panel-item-hover-bgcolor) !important;
+    background-color: var(--toolbarbutton-hover-background) !important;
     color: var(--bt-col) !important;
   }
+
+  menu:where([disabled="true"]), menuitem:where([disabled="true"]) {
+    background-color: transparent !important;
+  }
+}
+
+/* override background for in-page context menu */
+#contentAreaContextMenu[showservicesmenu="true"],
+#contentAreaContextMenu[showservicesmenu="true"] menupopup
+{
+  --panel-background: var(--bg-col)!important;
 }
 
 /* dropdown selectors */
 menupopup {--content-select-background-image: none !important;}
-#ContentSelectDropdown .ContentSelectDropdown-item-0:not([_moz-menuactive="true"]) {background-color: transparent !important;;}
+#ContentSelectDropdown .ContentSelectDropdown-item-0:not([_moz-menuactive="true"]) {background-color: transparent !important;}
 
 /*
 
